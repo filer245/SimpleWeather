@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import WeatherAPI from '../lib/apiConnect';
-import {toast} from 'react-hot-toast';
+
 
 export default function search({setter, getcity, gettemp, getclouds}) {
 
@@ -14,9 +14,9 @@ export default function search({setter, getcity, gettemp, getclouds}) {
         gettemp(data[1]);
         getcity(data[0]);
         getclouds(data[2]);
-      }catch(error){toast.error('Invalid city name');}
+      }catch(error){}
       
-    }else{toast.error('Please enter a city name');}
+    }else{}
   };
 
 
