@@ -12,4 +12,4 @@ import farToCel from './fartocel';
     return dataWeather;
   };
 
-export default useWeatherAPI;
+export default WeatherAPI;
