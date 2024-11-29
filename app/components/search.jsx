@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
-import useWeatherAPI from '../lib/apiConnect';
+import WeatherAPI from '../lib/apiConnect';
 
 export default function search({setter, getcity, gettemp, getclouds}) {
 
   async function handleSearch () {
     const cityInputRef = document.getElementById('city');
     if (cityInputRef.value) {
-      const data = await useWeatherAPI(cityInputRef.value);
+      const data = await WeatherAPI(cityInputRef.value);
       setter('weather');
       //console.log(data);
       gettemp(data[1]);
