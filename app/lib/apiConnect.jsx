@@ -1,7 +1,7 @@
 
 import farToCel from './fartocel';
 
-  async function useWeatherAPI (city) {
+  async function WeatherAPI (city) {
     console.log(`Fetching weather data for ${city}`);
     // Implement API call here
 
