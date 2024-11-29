@@ -15,8 +15,6 @@ export default function search({setter, getcity, gettemp, getclouds}) {
         getcity(data[0]);
         getclouds(data[2]);
       }catch(error){}
-      
-    }else{}
   };
 
 
