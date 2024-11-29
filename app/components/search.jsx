@@ -1,20 +1,24 @@
 "use client"
 import React from 'react';
 import WeatherAPI from '../lib/apiConnect';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function search({setter, getcity, gettemp, getclouds}) {
 
   async function handleSearch () {
     const cityInputRef = document.getElementById('city');
-    try{
+    if (cityInputRef.value) {
+      try{
         const data = await WeatherAPI(cityInputRef.value);
         setter('weather');
         console.log(data);
         gettemp(data[1]);
         getcity(data[0]);
         getclouds(data[2]);
-      }catch(error){}
+      }catch(error){toast.error('Invalid city name');}
+      
+    }else{toast.error('Please enter a city name');}
   };
 
 
